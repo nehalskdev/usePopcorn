@@ -158,6 +158,10 @@ body {
   border-bottom: 1px solid var(--color-background-100);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .list.list-movies li {
   cursor: pointer;
   transition: all 0.3s;
@@ -379,3 +383,150 @@ EMPTY STAR
 </svg>
 
 */
+
+@media (max-width: 768px) {
+  /* Base adjustments */
+  html {
+    font-size: 56.25%; /* 9px */
+  }
+
+  body {
+    padding: 1rem;
+  }
+
+  /* Navigation */
+  .nav-bar {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .logo {
+    grid-column: 1;
+  }
+
+  .search {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.6rem;
+  }
+
+  .num-results {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    font-size: 1.4rem;
+  }
+
+  /* Main layout */
+  .main {
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-top: 1.6rem;
+  }
+
+  .box {
+    width: 100%;
+    max-height: 50vh;
+  }
+
+  /* Movie list items */
+  .list li {
+    padding: 1rem 1.6rem;
+    grid-template-columns: 3rem 1fr;
+    column-gap: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .list h3 {
+    font-size: 1.5rem;
+  }
+
+  .list img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Movie details */
+  .details header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .details img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .details-overview {
+    padding: 1.2rem;
+  }
+
+  .details-overview h2 {
+    font-size: 2rem;
+  }
+
+  .details section {
+    padding: 2rem;
+  }
+
+  /* Watched summary */
+  .summary {
+    padding: 1.6rem;
+  }
+
+  .summary div {
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+  }
+
+  .summary p {
+    min-width: calc(50% - 1rem);
+  }
+
+  /* Buttons */
+  .btn-toggle {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .btn-back {
+    top: 0.5rem;
+    left: 0.5rem;
+    height: 2.8rem;
+    font-size: 2rem;
+  }
+
+  .btn-add {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  /* Error and loading states */
+  .error,
+  .loader {
+    padding: 2rem;
+    font-size: 1.6rem;
+  }
+}
+
+/* For very small screens (up to 400px) */
+@media (max-width: 400px) {
+  .list li {
+    grid-template-columns: 2.5rem 1fr;
+    column-gap: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .summary p {
+    min-width: 100%;
+  }
+
+  .details-overview h2 {
+    font-size: 1.8rem;
+  }
+}
